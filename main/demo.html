@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Info</title>
+    
+</head>
+<body>
+    <div>
+        <h2>Browser Information</h2>
+
+        <?php
+        $userAgent = $_SERVER['HTTP_USER_AGENT'];
+
+        echo "<p><strong>User Agent:</strong> $userAgent</p>";
+
+        // Extracting browser information from the user agent
+        $browserInfo = get_browser(null, true);
+        echo "<p><strong>Browser:</strong> {$browserInfo['browser']}</p>";
+        echo "<p><strong>Browser Version:</strong> {$browserInfo['version']}</p>";
+        echo "<p><strong>Platform:</strong> {$browserInfo['platform']}</p>";
+        echo "<p><strong>User Agent:</strong> {$browserInfo['user_agent']}</p>";
+        ?>
+
+    </div>
+</body>
+</html>

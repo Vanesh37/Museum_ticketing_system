@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Ticketing System</title>
+    <script src="https://cdn.jsdelivr.net/npm/qrious/dist/qrious.min.js"></script>
+    <h3 align="right"><button style="border-radius: 5px; background-color:wheat;text-decoration: none;font-family: 'Times New Roman', Times, serif; font-weight: bold;position:fixed;left: 93%;z-index: 2;"><a href="kar.html" >GO BACK</a></button></h3>
+    <style>
+      html {
+       background-image: url(taj2.jpg);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+    </style>
+   
+    <style>
+        /* Add some basic styles */
+        label {
+          display: block;
+          margin-bottom: 5px;
+        }
+        input[type="name"], input[type="email"], input[type="phone"], input[type="date"], input[type="time"], input[type="Ticket_price"], input[type="Total Price"] {
+          display: block;
+          width: 25%;
+          padding: 5px;
+          margin-bottom: 10px;
+          border: 1px solid #ccc;
+          border-radius: 2px;
+          box-sizing: border-box;
+        }
+        input[type="submit"] {
+          background-color: #4CAF50;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        .advertisements {
+          margin-top: 50px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+        }
+        .advertisements img {
+          max-width: 50%;
+          max-height: 40%;
+          border-radius: 4px;
+          margin-bottom: 10px;
+        }
+        .advertisement {
+          width: 30%;
+          margin-bottom: 20px;
+        }
+        .advertisement h3 {
+          margin-top: 0;
+        }
+      </style>
+</head>
+<body>
+    <h1>Online Ticketing System</h1>
+    <h1>Mysoore Palace</h1>
+    <form method="POST" action="process1.php">
+        <label for="name">Name:</label>
+        <input type="text" name="name"><br>
+        <label for="email">Email:</label>
+        <input type="email" name="email"><br>
+        <label for="phone">Phone:</label>
+        <input type="text" name="phone"><br>
+        <label for="date">Date:</label>
+        <input type="date" name="date"><br>
+        <label for="time">Time:</label>
+        <input type="time" name="time"><br>
+        <label for="num_tickets">Number of Tickets:</label>
+        <input type="number" name="num_tickets" min="1" max="10" value="1" onchange="calculateTotalPrice()"><br><br>
+        <label for="price_per_ticket">Price per Ticket:</label>
+        <input type="text" name="price_per_ticket" value="20" readonly><br><br>
+        <label for="total_price">Total Price:</label>
+        <input type="text" name="total_price" value="20" readonly><br><br>
+        <button type="submit" name="submit">Book Ticket</button>
+    </form>
+    <canvas id="qr-code"></canvas>
+
+    <script>
+        function calculateTotalPrice() {
+            var numTickets = parseInt(document.getElementsByName("num_tickets")[0].value);
+            var pricePerTicket = parseInt(document.getElementsByName("price_per_ticket")[0].value);
+            var totalPrice = numTickets * pricePerTicket;
+            document.getElementsByName("total_price")[0].value = totalPrice;
+        }
+
+        function generateQR(url) {
+            var qr = new QRious({
+                element: document.getElementById('qr-code'),
+                size: 200,
+                value: url
+            });
+            return qr.toDataURL('image/png');
+        }
+
+    </script>
+     </form>
+     <div class="advertisements">
+       <div class="advertisement">
+         <h3>Guru Sweet Mart</h3>
+         <a href="https://maps.app.goo.gl/ggXZDohaQzoctvua8"><img src="https://th.bing.com/th/id/R.d10202379f574038fe5c1ea967e91461?rik=hn67G0gApO0J4g&riu=http%3a%2f%2fblog.railyatri.in%2fwp-content%2fuploads%2f2016%2f08%2fGuru-Sweet-Mart.png&ehk=FesbJ55XMwF4ObnIQdSkUW1Ey8n9v7uLlFzwoXS5ejs%3d&risl=&pid=ImgRaw&r=0" alt="Guru Sweet Mart"></a>
+         <p>Enjoy delicious and best mysoore pak  at our mart located just a few blocks away from the monument.</p>
+         <p><a href="https://maps.app.goo.gl/ggXZDohaQzoctvua8">direction</a></p>
+       </div>
+       <div class="advertisement">
+         <h3>Mysore Crafts</h3>
+         <a href="https://maps.app.goo.gl/yefkg7QqZjGmb12x9"><img src="https://media-cdn.tripadvisor.com/media/photo-o/0f/f4/27/2f/1475738431014-largejpg.jpg" alt="Mysore Crafts"></a>
+         <p>Shop for unique handicrafts and souvenirs made by local artisans at our store located near the monument.</p>
+         <a href="https://maps.app.goo.gl/yefkg7QqZjGmb12x9">Direction</a>
+       </div>
+       <div class="advertisement">
+        <h3>KSIC Mysore Silk</h3>
+        <a href="https://maps.app.goo.gl/RfxwPEzye9sC488r8"><img src="https://th.bing.com/th/id/OIP.0W-U_VlNhfGogfcDn2mgMAHaJ4?pid=ImgDet&rs=1" alt="KSIC Mysore Silk"></a>
+        <p>Handlooms · Kanchipuram Silk Real Jari · Kanchipuram Sarees · Chanderi Sarees · Banarasi Sarees · South Silk Sarees · Blended South Silks · Pure Tussar : Jari & Resham ...</p>
+        <p><a href="https://maps.app.goo.gl/RfxwPEzye9sC488r8">direction</a></p>
+      </div>
+     </div>
+     
+</body>
+</html>

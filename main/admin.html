@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+		html {
+       background-image: url(taj2.jpg);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+	  form{
+		position: absolute;
+		top: 20%;
+		left: 5%;
+		border: 2px solid transparent;
+		box-shadow: 10px 10px 10px bisque;
+		background: transparent;
+		width: 300px;
+		height: auto;
+		
+	  }
+	  input{
+		border: 2px solid white;
+		box-shadow: 10px 10px 10px black;
+
+	  }
+	  label{
+		font-weight: bold;
+		font-family: 'Times New Roman', Times, serif;
+		color: black;
+	  }
+	 form button{
+	position: relative;
+		width: 50%;
+		justify-content: center;
+		align-items: center;
+		font-weight: bold;
+		margin: 10px;
+		left: -20%;
+		background-color: blue;
+	  }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h2>Admin Login</h2>
+		<form method="POST" action="admin_login.php">
+			<div class="form-group">
+				<label>Username</label>
+				<input type="text" name="username" placeholder="username" class="form-control" required>
+			</div>
+			<div class="form-group">
+				<label>Password</label>
+				<input type="password" name="password" placeholder="password" class="form-control" required>
+			</div>
+			<button type="submit" class="btn btn-primary">Login</button>
+		</form>
+	</div>
+</body>
+</html>

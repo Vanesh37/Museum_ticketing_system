@@ -1,0 +1,31 @@
+body {
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .modal-header {
+    background-color: #f8f9fa;
+    border-bottom: none;
+  }
+  
+  .modal-title {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .modal-body {
+    padding: 2rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .btn-block {
+    margin-bottom: 1rem;
+  }
+  
